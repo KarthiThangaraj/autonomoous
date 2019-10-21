@@ -1,0 +1,132 @@
+.inline-list {
+    list-style: none;
+    p {
+        font-size: 20px;
+    }
+}
+.mis-match {
+    color: #34B06A;
+    margin: 0px 0px 15px 0px;
+    .sec-one {
+        margin: 15px 0px;
+        .match {
+            padding: 0;
+        }
+        .sec-four1 {
+            margin: 0px 20px 0px 0px;
+        }
+        .sec-four2 {
+            margin: 0px 0px 0px 20px;
+        }
+    }
+    .sec-two {
+        margin: 15px 0px;
+        padding: 0;
+    }
+    .sec-three {
+        margin: 15px 0px;
+        padding: 0;
+    }    
+    .prod-title {
+        color: black;
+        margin: 10px 0px;
+        .row{
+            margin: 15px 0px;
+        }
+        .current{
+            height: 12px;
+            width: 12px;
+            background-color: #EB678F;
+            display: block;
+            border-radius: 50%;
+            margin-left: 8px;
+        }
+        .sec-five {
+            color: #CDCDCD;
+        }
+        .sec-des {
+            color: #EB678F;
+        }
+        .sec-des2 {
+            color: #34B06A;
+        }
+    }
+    .prod-des {
+        color: #6FC8CC;
+    }
+    .sec-six {
+        margin: 15px 0px;
+    }
+    .btn-success {
+        // border-radius: 10%;
+        margin-right: 15px;
+        border-radius: 40px;
+        background-color: #34B06A;
+        width: 40%;
+    }
+    .btn-danger {
+        border-radius: 40px;
+        background-color: #EB678F;
+        width: 40%;
+        border: 0;
+    }
+}
+.prod {
+    .prod-types {
+        float: right;
+        ul {
+            float: right;
+        }       
+        li{
+            list-style-type:none;
+            margin-right: 15px;
+            font-size: 13px;
+        }
+        li:before{
+            content:'\00b7'; 
+            font-size:69px; 
+            line-height:24px; 
+            vertical-align: text-top;
+        }
+        .low-inventory {
+            color: #6FC8CC;
+        }
+        .out {
+            color: #EB678F;
+        }
+        .mis-match {
+            color: #34B06A;
+        }
+    }
+}
+.final-sec {
+    margin: 18px 0px 0px 15px;
+    img {
+        width: 100%;
+    }
+    .prod-title {
+        color: black;
+    }
+    .prod-des {
+        margin-top: 10px;
+        color: #6FC8CC;
+    }
+    .count {
+        margin-top: 45px;
+        .prod-title {
+            color: #CDCDCD;
+        }
+        .prod-num {
+            color: #34B06A;
+        }
+        .prod-missing {
+            color: #EB678F;
+        }
+        .prod-out {
+            color: #6FC8CC;
+        }
+    }
+}
+.video {
+    margin: 50px;
+}

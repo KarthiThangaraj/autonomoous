@@ -1,0 +1,67 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="search">
+                    <h3>Find a Product</h3>
+                    <div class="row">
+                        <div class="input-group">
+                            <input class="form-control py-2 border-right-0 border form-rounded" placeholder="search"
+                                 id="example-search-input">
+                            <span class="input-group-append">
+                                <button class="btn border-left-0 border search-btn" type="button">
+                                    <i class="fa fa-search" [ngStyle]="{'color':'#6FC8CC'}"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="results">
+                    <h3>10 RESULTS</h3>
+                    <div class="prod">
+                        <ul *ngFor="let data of sampleData">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <span class="current"
+                                        [ngStyle]="{'background-color': data.color == 'out' ?  '#EB678F' : (data.color == 'mismatch' ? '#34B06A' : '#6FC8CC')}"></span>
+                                </div>
+                                <div class="col-md-11">
+                                    <li>
+                                        {{data.name}}
+                                    </li>
+                                    <li>
+                                        {{data.brand}}
+                                    </li>
+                                    <span class="row seg">
+                                        <li>
+                                            {{data.aisle}}
+                                        </li>
+                                        <li>
+                                            {{data.segment}}
+                                        </li>
+                                        <li>
+                                            {{data.shelf}}
+                                        </li>
+                                    </span>
+                                    <hr />
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-8">
+                <div class="vr"></div>
+                <div class="location">
+                    <h3>LOCATION</h3>
+                    <p>Chesterfield, MO</p>
+                </div>
+                <div class="prod-finds">
+                    <img src="assets/img/mobProduct_Location.jpg" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

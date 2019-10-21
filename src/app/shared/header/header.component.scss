@@ -1,0 +1,67 @@
+.inline-list {
+    position:relative;
+     li {
+        margin: 0px 12px;
+    }
+    li:last-child{
+        right:0;
+        position:absolute
+      }
+}
+.logo {
+    padding: 0px;
+    right: 20px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    background-color: #264C97;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFFFFF;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+@media all and (max-width: 500px) {
+    /* put your css styles in here */
+    .inline-list {
+        position:relative;
+         li {
+            margin: 0px 12px;
+        }
+        li:last-child{
+            right:0;
+            position: inherit;
+          }
+    }
+  }

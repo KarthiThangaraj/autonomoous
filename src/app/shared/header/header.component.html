@@ -1,0 +1,55 @@
+<section>
+    <header *ngIf="web">
+        <nav class="navbar">
+            <div class="container col-md-12">
+                <div class="logo col-md-4">
+                    <img src="assets/img/autonomus_ai_logo.png" height="50" />
+                </div>
+                <div class="list col-md-8">
+                    <ul class="inline-list">
+                        <div class="row">
+                        <li>
+                            <a routerLink="/fleet" routerLinkActive="active" (click)="active = 'fleet'" [ngStyle]="{'color': active == 'fleet' ? '#17BCB6' : '#FFFFFF'}">FLEET</a>
+                        </li>
+                        <li>
+                            <a routerLink="/stores" routerLinkActive="active" (click)="active = 'stores'" [ngStyle]="{'color': active == 'stores' ? '#17BCB6' : '#FFFFFF'}">STORES</a>
+                        </li>
+                        <li>
+                            <a routerLink="/analytics" routerLinkActive="active" (click)="active = 'analytics'" [ngStyle]="{'color': active == 'analytics' ? '#17BCB6' : '#FFFFFF'}">ANALYTICS</a>
+                        </li>
+                        <li>
+                            <a routerLink="/support" routerLinkActive="active" (click)="active = 'support'" [ngStyle]="{'color': active == 'support' ? '#17BCB6' : '#FFFFFF'}">SUPPORT</a>
+                        </li>
+                        <li>
+                            <a href="">SIGN OUT</a>
+                        </li>
+                    </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div *ngIf="mob" >
+    <div id="mySidenav" class="sidenav">
+        <a class="closebtn" (click)="closeNav()">&times;</a>
+        <ul class="inline-list">
+            <li>
+                <a routerLink="/fleet" routerLinkActive="active" (click)="active = 'fleet' ; closeNav()" [ngStyle]="{'color': active == 'fleet' ? '#17BCB6' : '#FFFFFF'}">FLEET</a>
+            </li>
+            <li>
+                <a routerLink="/stores" routerLinkActive="active" (click)="active = 'stores' ; closeNav()" [ngStyle]="{'color': active == 'stores' ? '#17BCB6' : '#FFFFFF'}">STORES</a>
+            </li>
+            <li>
+                <a routerLink="/analytics" routerLinkActive="active" (click)="active = 'analytics' ; closeNav()" [ngStyle]="{'color': active == 'analytics' ? '#17BCB6' : '#FFFFFF'}">ANALYTICS</a>
+            </li>
+            <li>
+                <a routerLink="/support" routerLinkActive="active" (click)="active = 'support' ; closeNav()" [ngStyle]="{'color': active == 'support' ? '#17BCB6' : '#FFFFFF'}">SUPPORT</a>
+            </li>
+            <li>
+                <a href="">SIGN OUT</a>
+            </li>
+        </ul>
+      </div>
+      <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; open</span>
+    </div>
+</section>
