@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-        <div class="row">
+        <!-- <div class="row output">
             <div class="col-md-3 mis-match">
                 <div class="row sec-one">
                     <div class="col-md-6 match">
@@ -9,7 +9,7 @@
                                 <img src="assets/img/sample2.jpg" height="60" />
                             </li>
                             <li>
-                                <p>Mismatch123</p>
+                                <p>Mismatch</p>
                             </li>
                         </ul>
                     </div>
@@ -17,22 +17,28 @@
                         <img src="assets/img/sample1.jpg" height="100" />
                     </div>
                 </div>
-                <div class="sec-two col-md-12">
-                    <p class="prod-title">PRODUCT</p>
-                    <p class="prod-des">Maxwell Hoouse Original roast</p>
-                </div>
-                <div class="sec-three col-md-12">
-                    <p class="prod-title">SCENE</p>
-                    <p class="prod-des">Coffee</p>
-                </div>
-                <div class="row sec-one">
-                    <div class="sec-four1">
-                        <p class="prod-title">PRICE</p>
-                        <p class="prod-des">$3.99</p>
+                <div>
+                    <div class="sec-two col-md-12">
+                        <p class="prod-title">PRODUCT</p>
+                        <p class="prod-des">Maxwell Hoouse Original roast</p>
                     </div>
-                    <div class="sec-four2">
-                        <p class="prod-title">DATE & TIME</p>
-                        <p class="prod-des">8.28.18 / 10am</p>
+                    <div class="sec-three col-md-12">
+                        <p class="prod-title">SCENE</p>
+                        <p class="prod-des">7</p>
+                    </div>
+                    <div class="sec-three col-md-12">
+                        <p class="prod-title">SCENE</p>
+                        <p class="prod-des">coffee</p>
+                    </div>
+                    <div class="row sec-one">
+                        <div class="sec-four1">
+                            <p class="prod-title">PRICE</p>
+                            <p class="prod-des">$3.99</p>
+                        </div>
+                        <div class="sec-four2">
+                            <p class="prod-title">DATE & TIME</p>
+                            <p class="prod-des">{{date | date: 'dd.MM.yy / hh:mm'}}</p>
+                        </div>
                     </div>
                 </div>
                 <hr />
@@ -84,11 +90,8 @@
                         <li class="mis-match">MISMATCH</li>
                     </ul>
                 </div>
-                <div>
-                    <img src="assets/img/prod_cols.jpg" height="300" width="100%"/>
-                </div>
-                <div class="video">
-                    <input type="file" ng2FileSelect [uploader]="uploader" />
+                <div class="col-md-12 row">
+                    <img src="assets/img/prod_cols.jpg" height="300" width="100%" />
                 </div>
                 <div class="row final-sec">
                     <div class="col-md-4">
@@ -112,12 +115,84 @@
                         </div>
                     </div>
                     <div class="col-md-5">
-                            <p class="prod-title">SHELF QUALITY</p>
-                            <!-- <img src="assets/img/chart.jpg" height="250" alt="chart"> -->
-                            <canvas id="myChart" width="400" height="350"></canvas>
+                        <p class="prod-title">SHELF QUALITY</p>
+                        <canvas id="myChart" width="400" height="350"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form class="upload">
+                    <fieldset>
+                        <legend>Upload Files:</legend>
+                        <form #f="ngForm" action="">
+                            <input type="file" (change)="fileEvent($event)" />
+                        </form>
+                        <p class="or">OR</p>
+                        <div class="input-group">
+                            <input class="form-control py-2 border form-rounded" placeholder="paste url here"
+                                [(ngModel)]="webUrl" name="webUrl">
+                        </div>
+                        <button type="button" class="btn btn-success" (click)="uploadfile(f)">Upload</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row output" *ngIf="showOutput">
+            <div class="col-md-3 mis-match">
+                <div class="dropdown">
+                    <select (change)="change()" [(ngModel)]="selectedValue">
+                        <option value="" [selected]=true [disabled]="true">Select object</option>
+                        <option *ngFor="let object of objectList; let i = index" [ngValue]="object"
+                            [selected]="i == 0 ? true : false">{{object.object}}</option>
+                    </select>
+                </div>
+                <p class="options" *ngIf="!showObject">Select object to view details</p>
+                <div *ngIf="showObject">
+                    <div class="sec-two col-md-12">
+                        <p class="prod-title">PRODUCT</p>
+                        <p class="prod-des">{{details.object}}</p>
+                    </div>
+                    <div class="sec-three col-md-12">
+                        <p class="prod-title">TOTAL OBJECT COUNT</p>
+                        <p class="prod-des">{{total_count}}</p>
+                    </div>
+                    <div class="sec-three col-md-12">
+                        <p class="prod-title">{{details.object | uppercase}} OBJECT COUNT</p>
+                        <p class="prod-des">{{details.count}}</p>
+                    </div>
+                    <div class="row sec-one">
+                        <div class="sec-four1">
+                            <p class="prod-title">PRICE</p>
+                            <p class="prod-des">{{details.price}}</p>
+                        </div>
+                        <div class="sec-four2">
+                            <p class="prod-title">DATE & TIME</p>
+                            <p class="prod-des">{{date | date: 'dd.MM.yy / hh:mm'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 prod">
+                <div class="col-md-12 row">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>INPUT:</p>
+                            <img src={{inputUrl}} height="300" width="100%" />
+                        </div>
+                        <div class="col-md-6">
+                            <p>OUTPUT:</p>
+                            <img src={{outputUrl}} height="300" width="100%" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>

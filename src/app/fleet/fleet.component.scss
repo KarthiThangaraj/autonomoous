@@ -53,6 +53,7 @@
     }
     .prod-des {
         color: #6FC8CC;
+        // color: red;
     }
     .sec-six {
         margin: 15px 0px;
@@ -129,4 +130,75 @@
 }
 .video {
     margin: 50px;
+}
+
+.upload {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
+    h1 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    button { 
+        margin-top: 10px;
+        width: 50%;
+    }
+}
+.inputImg {
+    p {
+        margin-bottom: 15px;
+    }
+}
+
+.Brand-sec {
+    h3 {
+        text-align: center;
+        color: #264C97;
+        font-size: 24px;
+        margin: 25px 0px;
+    }
+    fieldset {
+        display: block;
+        margin-left: 2px;
+        margin-right: 2px;
+        padding-top: 0.35em;
+        padding-bottom: 0.625em;
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+        border: 2px solid #ccc;
+      }
+      legend {
+        width: 50% !important;
+        max-width: 100%;
+        padding: 0px 8px !important;
+        color: #264C97;
+    }
+}
+.dropdown {
+    select {
+        padding: 5px;
+        width: 100%;
+        background-color: DodgerBlue;
+        color: #FFFF;
+    }
+}
+.output {
+    margin-top: 30px;
+}
+.options {
+    margin-top: 25px;
+}
+#upload-file-info {
+    display: inline-block;
+    max-width: 58%;
+    height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.or {
+    margin: 10%;
 }

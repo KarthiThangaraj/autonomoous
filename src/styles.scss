@@ -1,3 +1,5 @@
+@import '~ngx-toastr/toastr';
+
 // Helvetica Font
 
 @font-face {
@@ -50,9 +52,9 @@ header {
     color: #FFFFFF;
     margin-bottom: 25px;
     .navbar {
+        height: 65px;
         ul {
             display: block;
-            // flex-direction: row;
             list-style: none;
         }
         a {
